@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application R-Shiny</title>
+    <link rel="stylesheet" href="style_comp.css">
+
+    <style>
+        html {
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            overflow: hidden;
+        }
+
+        #stars, #stars2, #stars3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: transparent;
+            animation: animStar linear infinite;
+        }
+
+        #stars {
+            width: 1px;
+            height: 1px;
+            animation-duration: 50s;
+        }
+
+        #stars2 {
+            width: 2px;
+            height: 2px;
+            animation-duration: 100s;
+        }
+
+        #stars3 {
+            width: 3px;
+            height: 3px;
+            animation-duration: 150s;
+        }
+
+        @keyframes animStar {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-2000px);
+            }
+        }
+
+        .content-box {
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            font-family: 'Segoe UI';
+            backdrop-filter: blur(12px);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 4000px;
+            text-align: left;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-row {
+            display: flex;
+            gap: 50px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-row img {
+            width: 300px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-row img:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px white;
+            animation: zoomIn 0.4s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <div class="content-box">
+        <h1>Application R-Shiny</h1>
+        <p>
+            Dans ce projet, mon équipe et moi avons développé une application interactive permettant de générer automatiquement des playlists thématiques par décennie,
+             à partir d’un vaste jeu de données Spotify. L’objectif était de capter l’identité sonore propre à chaque époque tout en y intégrant des morceaux plus récents 
+             ou anciens aux caractéristiques musicales similaires. Nous avons nettoyé et préparé les données (titre, artiste, popularité, tempo, énergie, genre, etc.), 
+             puis utilisé une Analyse en Composantes Principales (ACP) suivie d’un clustering par K-means pour regrouper les morceaux selon leur ambiance sonore. 
+             Chaque cluster a été associé à une décennie dominante et à une ambiance musicale (énergique, calme, joyeuse…). 
+             L’interface de l’application, épurée et intuitive, permet aux utilisateurs de choisir un genre musical, d’explorer les playlists par décennie et de 
+             filtrer les morceaux populaires ou peu connus. 
+            Ce projet m’a permis de combiner analyse de données, design d’interface et valorisation des résultats de manière accessible et visuelle.
+        </p>
+
+        <!-- Ligne d'images (4 miniatures) -->
+        <div class="image-row">
+            <img id="gif1" src="photo/projets/gif/spotify.gif" alt="GIF Animation">
+            <img id="thumbnail1" src="photo/projets/spo.jpg" alt="Image 1">
+            <img id="thumbnail2" src="photo/projets/coder.jpg" alt="Image 2">
+            
+        </div>
+
+
+        <!-- Modales pour chaque image -->
+        <div id="modal1" class="modal"><img src="photo/projets/spo.jpg" alt="Zoom 1"></div>
+        <div id="modal2" class="modal"><img src="photo/projets/coder.jpg" alt="Zoom 2"></div>
+
+
+
+        <!-- Modale GIF -->
+        <div id="modalGif" class="modal">
+            <img src="photo/projets/gif/spotify.gif" alt="GIF Zoom">
+        </div>
+
+        <br><br>
+        <a href="index.html"><span>Retour à l'accueil</span></a>
+    </div>
+
+    <script>
+        // Génération des étoiles
+        function generateStarShadows(numStars, maxWidth, maxHeight) {
+            let shadows = [];
+            for (let i = 0; i < numStars; i++) {
+                const x = Math.floor(Math.random() * maxWidth);
+                const y = Math.floor(Math.random() * maxHeight);
+                shadows.push(`${x}px ${y}px #FFF`);
+            }
+            return shadows.join(', ');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('stars').style.boxShadow = generateStarShadows(700, 2000, 2000);
+            document.getElementById('stars2').style.boxShadow = generateStarShadows(200, 2000, 2000);
+            document.getElementById('stars3').style.boxShadow = generateStarShadows(100, 2000, 2000);
+        });
+
+        // Gestion des miniatures et modales
+        const thumbnails = [
+            { thumb: 'thumbnail1', modal: 'modal1' },
+            { thumb: 'thumbnail2', modal: 'modal2' },
+            { thumb: 'gif1', modal: 'modalGif' }
+        ];
+
+        thumbnails.forEach(({ thumb, modal }) => {
+            const thumbEl = document.getElementById(thumb);
+            const modalEl = document.getElementById(modal);
+            thumbEl.onclick = () => modalEl.style.display = 'flex';
+            modalEl.onclick = () => modalEl.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+:root {
+    --def: #96B7C4;
+    --inv: #ffffff;
+  }
+  
+  /* Bouton animé type "from-left" - version compacte */
+  a {
+    position: relative;
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    margin-top: 20px;
+    font-family: 'Franklin Gothic Heavy', sans-serif;
+    font-size: 1rem;
+    color: var(--inv);
+    text-decoration: none;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    cursor: pointer;
+    user-select: none;
+    background: none;
+    border: none;
+    z-index: 1;
+  }
+  
+  a::before,
+  a::after {
+    content: '';
+    position: absolute;
+    transition: inherit;
+    z-index: -1;
+  }
+  
+  /* Hover état général */
+  a:hover {
+    color: var(--def);
+    transition-delay: 0.5s;
+  }
+  
+  a:hover::before {
+    transition-delay: 0s;
+  }
+  
+  a:hover::after {
+    background: var(--inv);
+    transition-delay: 0.35s;
+  }
+  
+  /* Animation from LEFT */
+  a::before,
+  a::after {
+    top: 0;
+    width: 0;
+    height: 100%;
+  }
+  
+  a::before {
+    right: 0;
+    border: 1px solid var(--inv);
+    border-left: 0;
+    border-right: 0;
+  }
+  
+  a::after {
+    left: 0;
+  }
+  
+  a:hover::before,
+  a:hover::after {
+    width: 100%;
+  }
+  

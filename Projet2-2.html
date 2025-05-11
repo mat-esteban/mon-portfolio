@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo France</title>
+    <link rel="stylesheet" href="style_comp.css">
+    <style>
+        /* Styles pour les étoiles */
+        html {
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            overflow: hidden;
+        }
+
+        #stars, #stars2, #stars3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: transparent;
+            animation: animStar linear infinite;
+        }
+
+        #stars {
+            width: 1px;
+            height: 1px;
+            animation-duration: 50s;
+        }
+
+        #stars2 {
+            width: 2px;
+            height: 2px;
+            animation-duration: 100s;
+        }
+
+        #stars3 {
+            width: 3px;
+            height: 3px;
+            animation-duration: 150s;
+        }
+
+        @keyframes animStar {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-2000px);
+            }
+        }
+
+        /* Styles pour le rectangle avec fond flou */
+        
+
+
+
+.content-box {
+    position: relative; /* Position relative pour le contenu */
+    background: rgba(255, 255, 255, 0.1); /* Fond semi-transparent */
+    font-family: 'Segoe UI';
+    backdrop-filter: blur(12px); /* Effet de flou */
+    border-radius: 15px; /* Coins arrondis */
+    padding: 40px; /* Espace intérieur */
+    max-width: 4000px; /* Largeur maximale */
+    margin: left ;
+    text-align: left; 
+    color: white; /* Couleur du texte */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légère */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+  
+    </style>
+</head>
+<body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <div class="content-box">
+        <h1>Stage(toujours en cours🏗️)</h1>
+        
+            
+            
+<h2>Fichier Excel automatisé avec VBA</h2>
+<p>  
+J’ai développé un fichier Excel automatisé en VBA afin de remplacer un outil existant devenu obsolète, car entièrement basé sur une saisie manuelle.
+Le nouveau fichier permet notamment :.</p>  
+
+•	Le remplissage automatique des informations à partir d’un identifiant agent (nom, prénom, agence, etc.)
+<br></br>
+•	Une meilleure lisibilité grâce à des repères visuels par semaine
+<br></br>
+•	La conversion automatique des statuts ("0%" → KO, "100%" → OK)
+<br></br>
+•	Des calculs dynamiques et des tableaux croisés (TCD) actualisés automatiquement selon plusieurs dimensions (agent, agence, global)
+<br></br>
+<p>  
+Mise à jour du suivi des coffres-forts
+En collaboration avec un collègue, j’ai participé à la mise à jour du suivi d’un ancien système de stockage sécurisé en agence.
+Le suivi existant n’ayant pas été actualisé depuis plusieurs années, nous avons repris et fiabilisé les données liées à l’utilisation de ces coffres, en identifiant les écarts et situations particulières (coffres transférés, inaccessibles, etc.).
+Requêtes sous SAP Business Objects
+J’ai conçu plusieurs requêtes via SAP Business Objects (Web Intelligence), portant sur la clientèle physique.</p>  
+Ces requêtes ont permis de :
+•	Identifier les statuts juridiques particuliers (tutelle, curatelle, etc.)
+<br></br>
+•	Repérer les clients en situation de fragilité
+<br></br>
+•	Analyser les profils non-résidents fiscaux
+<br></br>
+J’ai utilisé des filtres avancés et défini des variables personnalisées pour affiner les résultats, en veillant à la cohérence des données extraites.
+Analyse des incohérences dans les données
+J’ai rédigé un document listant les principales anomalies rencontrées dans la base de données clients, telles que :
+•	Dates de naissance génériques ou incohérentes
+<br></br>
+•	Comptes sans activité mais encore considérés comme ouverts
+<br></br>
+•	Prospects redondants ou peu pertinents
+<br></br>
+•	Civilités et libellés non harmonisés (ex. : "Mme", "Madame", "M.", etc.)
+.</p>  
+
+    <a href="index.html"><span>Retour à l'accueil</span></a>
+
+
+        
+    </div>
+
+    <script>
+        // Fonction pour générer des ombres aléatoires
+        function generateStarShadows(numStars, maxWidth, maxHeight) {
+            let shadows = [];
+            for (let i = 0; i < numStars; i++) {
+                const x = Math.floor(Math.random() * maxWidth);
+                const y = Math.floor(Math.random() * maxHeight);
+                shadows.push(`${x}px ${y}px #FFF`);
+            }
+            return shadows.join(', ');
+        }
+
+        // Appliquer les ombres aux éléments d'étoiles
+        document.addEventListener('DOMContentLoaded', () => {
+            const stars = document.getElementById('stars');
+            const stars2 = document.getElementById('stars2');
+            const stars3 = document.getElementById('stars3');
+
+            stars.style.boxShadow = generateStarShadows(700, 2000, 2000); // 700 petites étoiles
+            stars2.style.boxShadow = generateStarShadows(200, 2000, 2000); // 200 étoiles moyennes
+            stars3.style.boxShadow = generateStarShadows(100, 2000, 2000); // 100 grosses étoiles
+        });
+    </script>
+</body>
+</html>

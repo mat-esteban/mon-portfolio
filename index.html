@@ -1,0 +1,782 @@
+
+
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="test.css">
+        <link rel="stylesheet" href="boutton.css">
+
+        <!-- Ici commence le code pour mettre le logo  -->
+        <link rel="icon" type="image/png" href="favicon.ico/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="favicon.ico/favicon.svg" />
+        <link rel="shortcut icon" href="favicon.ico/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-touch-icon.png" />
+        <link rel="manifest" href="favicon.ico/site.webmanifest" />
+        <link rel="manifest" href="favicon.ico/manifest.json">
+
+        <link rel="icon" type="favicon.io/x-icon" href="favicon.ico">
+
+
+
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <!-- GSAP ScrollTrigger -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+       
+            <!-- GSAP Core -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+            <!-- GSAP ScrollTrigger -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        
+        <!-- Fin du code pour le logo  -->
+    </head>
+    <body>
+        <div class="loader"></div>
+        <!-- Section 3 quii ne sert a rien-->
+        <div class="section3" id="section3">
+
+ 
+            <div class="link-container">
+                <a href="https://www.linkedin.com/in/mat%C3%A9o-esteban-9409942a8/" class="link-text">Linkedin</a>
+                <a href="docs/CV_MATEO_ESTEBAN.pdf" class="link-text" target="_blank">CV</a>
+                <div class="projects-dropdown">
+                    <span class="link-text">Projets</span>
+                    <div class="dropdown-content">
+                        
+                        <button class="dropdown-link" onclick="scrollToSection('projects2')">Projets d'études</button>
+                        <button onclick="window.location.href='mon_template/index.html'" class="dropdown-link">Projets persos</button>
+
+                    </div>
+                </div>
+            </div>
+            
+            <button class="button" onclick="scrollToSection('presentation')">_</button>
+    
+            </div>
+            <div class="text"></div>
+        </div>
+        <div class="video-container">
+            <video id="myVideo" width="1920" height="1080" autoplay muted loop>
+                
+                
+            </video>
+            <div class="overlay-text"> </div>
+            <div class="button-section">
+
+                
+    
+    
+    
+            </div>
+        </div>
+    <!-- Section 4 -->
+    <div class="section4" id="presentation">
+        
+        <div class="button-container">
+            <button class="tab-button active" onclick="showSection('presentation')">Présentation</button>
+            <button class="tab-button" onclick="showSection('langues')">Langues</button>
+            <button class="tab-button" onclick="showSection('soft-skills')">Ma formation</button>
+            <button class="tab-button" onclick="showSection('passion')">Mon métier plus tard</button>
+        </div>
+        <div class="circle small shade1"></div>
+        <div class="circle medium shade2"></div>
+        <div class="circle large shade3"></div>
+        <div class="circle xlarge shade4"></div>
+        <div class="circle xxlarge shade5"></div>
+    
+        <!-- Contenu de l'onglet Présentation -->
+        <div id="presentation-content" class="text-container active">
+
+            <p class="text-content">
+                Bonjour et bienvenue sur mon portfolio. Je m'appelle Matéo Esteban, j'ai 20 ans et je suis originaire de Quimper.
+Passionné par l'informatique depuis plusieurs années, j'ai choisi d'intégrer un BUT Science des Données (anciennement STID) avec une spécialisation en Marketing. Actuellement en deuxième année, cette formation m’a permis d’approfondir mes compétences en analyse de données et de découvrir de nouvelles technologies.
+            </p>
+
+    <p>
+    </p>
+
+            <p class="text-content">
+💼 À la recherche d'une alternance
+Désireux de continuer à me former et à développer mes compétences, je suis activement à la recherche d’une alternance pour mettre en pratique mes connaissances et relever de nouveaux défis.
+</p>
+<p>
+</p>
+<p class="text-content">
+Je serais ravi de contribuer à vos projets et d’échanger avec vous.
+N'hésitez pas à parcourir ce site pour en savoir plus sur mon parcours, mes compétences et mes réalisations.
+</p>
+<p>
+</p>
+
+<p class="text-content">
+📄 <a href="docs/CV_MATEO_ESTEBAN.pdf" class="link-text" target="_blank">Consulter mon CV</a>
+            </p>
+        </div>
+<!-- Contenu de l'onglet Langues -->
+<!-- Contenu de l'onglet Langues -->
+<div id="langues-content" class="text-container">
+    <p class="text-content">
+        Je parle couramment le français et maîtrise le vocabulaire courant, technique et professionnel en anglais, ainsi que des notions en statistique et informatique. J’ai également un bon niveau de vocabulaire en espagnol.
+    </p>
+    <!-- Ajoutez les images des drapeaux ici -->
+    <div class="drapeaux-container">
+        <img src="photo/drapeau/france.png" alt="Drapeau de la France" title="Français">
+        <img src="photo/drapeau/royaume-uni.png" alt="Drapeau de la Grande-Bretagne" title="Anglais">
+        <img src="photo/drapeau/espagne.png" alt="Drapeau de l'Espagne" title="Espagnol">
+    </div>
+</div>
+    
+        <!-- Contenu de l'onglet Soft Skills -->
+        <div id="soft-skills-content" class="text-container">
+            <p class="text-content">
+                Quand j’ai intégré la formation du BUT Science des Données il y a deux ans, je ne savais pas vraiment à quoi m’attendre. Mais aujourd’hui, avec du recul, je peux dire que c’était une expérience que je ne regrette absolument pas.
+Le vrai plus de cette formation, ce sont les projets « SAE » (Situations d’Apprentissage et d’Évaluation) qui allient le côté théorique des cours à des projets concrets.
+<br></br>
+<p class="text-content">
+De plus, la possibilité de faire un stage en deuxième année, puis de l’alternance en troisième année, est un véritable atout. Le stage de deuxième année m’a permis de mettre en pratique ce que j’apprenais en cours, tout en découvrant le monde professionnel.
+Les outils et les matières enseignés sont intéressants, mêlant l’informatique décisionnelle, plus orientée informatique, à la statistique décisionnelle, davantage axée sur les mathématiques et les statistiques.
+</p>
+<br>
+<p class="text-content">
+On dispose d’un large éventail d’options pour résoudre des problèmes et traiter des sujets variés.
+En résumé, je ne regrette pas d’avoir choisi ce BUT. J’ai hâte de voir ce que l’avenir me réserve !
+</p>
+            </p>
+        </div>
+    
+        <!-- Contenu de l'onglet Passion -->
+        <div id="passion-content" class="text-container">
+            <p class="text-content">
+                Plus tard, je voudrais devenir data analyst. C’est un métier qui me passionne, car j’aime donner du sens à des données qui, au premier abord, peuvent
+                sembler complexes ou désorganisées. 
+                <br></br>
+                Ce que je trouve particulièrement motivant, c’est de pouvoir créer des visualisations claires et parlantes pour 
+                aider les autres à mieux comprendre les informations. 
+                <br></br>
+                Travailler avec les données, les explorer, les analyser et en tirer des conclusions utiles est 
+                quelque chose que je trouve à la fois stimulant et gratifiant. C’est un métier au cœur de la prise de décision, et j’aimerais y contribuer avec mes compétences.
+            </p>
+        </div>
+    </div>
+    
+    <canvas></canvas>
+    
+    
+    <!-- Section 5 - Compétences -->
+    <div class="section-7" id="competences">
+        <canvas id="animationCanvas"></canvas>
+        <div class="content">
+            <div class="profile-skills">
+                <div>
+                    <input type="checkbox" id="sk1">
+                    <label for="sk1"></label>
+                    <ul class="skills skills1">
+                        <li class="sk-ani"><span>HTML-CSS-JS</span></li>
+                        <li class="sk-cms"><span>Python</span></li>
+                        <li class="sk-dis"><span>SQL</span></li>
+                        <li class="sk-pro"><span>Dax</span></li>
+                        <li class="sk-dtb"><span>R & R-Shiny</span></li>
+                        <li class="more">
+                            <input type="checkbox" id="more-con"><label for="more-con"></label>
+                            <div><span>M</span><span>SAS</span></span><span>VBA</span><span>PHP</span><span>Ruby</span></div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <input type="checkbox" id="sk2">
+                    <label for="sk2"></label>
+                    <ul class="skills skills2">
+                        <li class="sk-gim"><span>Power-BI</span></li>
+                        <li class="sk-ado"><span>Excel&nbsp;</span></li>
+                        <li class="sk-not"><span>Suite office</span></li>
+                        <li class="sk-tri"><span>SAP-Business objects</span></li>
+                        <li class="sk-wor"><span>Talend</span></li>
+                        <li class="more">
+                            <input type="checkbox" id="more-pro"><label for="more-pro"></label>
+                            <div><span>Qgis</span><span>Oracle</span></div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <input type="checkbox" id="sk3">
+                    <label for="sk3"></label>
+                    <ul class="skills skills3">
+                        
+                        <li class="sk-htm"><span>Modèles linéaires</span></li>
+                        <li class="sk-css"><span>Test d'hypothèses</span></li>
+                        <li class="sk-jav"><span>Analyses/prévisions de données temporelles
+                            
+                            </span></li>
+                        <li class="sk-php"><span>Statistiques descriptives</span></li>
+                        <li class="sk-sql"><span>Statistiques inférentielles</span></li>
+                        <li class="more">
+                            <input type="checkbox" id="more-len"><label for="more-len"></label>
+                            <div><span>WebScraping</span><span>Création de base de données</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+    
+
+<!-- Ajout du bouton dans la section 8 -->
+<section id="section8">
+    <script type="x-shader/x-vertex" id="vertexshader">
+        attribute float size;
+        attribute vec3 customColor;
+        varying vec3 vColor;
+      
+        void main() {
+          vColor = customColor;
+          vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+          gl_PointSize = size * ( 300.0 / -mvPosition.z );
+          gl_Position = projectionMatrix * mvPosition;
+        }
+      </script>
+      <script type="x-shader/x-fragment" id="fragmentshader">
+       uniform vec3 color;
+       uniform sampler2D pointTexture;
+      
+       varying vec3 vColor;
+      
+       void main() {
+         gl_FragColor = vec4( color * vColor, 1.0 );
+         gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
+       }
+      </script>
+      
+      <div id="magic"></div>
+      <div class="playground">
+        <div class="bottomPosition"></div>
+      </div>
+      
+      <!-- Conteneur pour le bouton -->
+      <div class="section8-button-container">
+          <button class="section8-button" onclick="scrollToSection('presentation')">Portfolio</button>
+      </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="projects" id="projects-projects">
+    <h2 id="titre-sd1" class="section-title">Mes projets de <span class="highlight">SD-1</span></h2>
+    <div class="projects-container">
+        <!-- Bouton de navigation gauche -->
+        <button class="nav-button left" onclick="showPrevious('projects')">
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+    
+        <!-- Conteneur des cartes de projets -->
+        <div class="projects-wrapper" id="projects-wrapper">
+            <!-- tes project-card ici, inchangées -->
+        </div>
+    
+        <!-- Bouton de navigation droite -->
+        <button class="nav-button right" onclick="showNext('projects')">
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </div>
+    
+</section>
+
+
+
+<!--   
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+<section class="projects2" id="projects2">
+    <h2 id="titre-sd2" class="section-title">Mes projets de <span class="highlight">SD-2</span></h2>
+    <div class="projects2-container">
+        <!-- Bouton de navigation gauche (identique à projects) -->
+        <button class="nav-button left" onclick="showPrevious('projects2')">
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+
+        <!-- Conteneur des cartes de projets -->
+        <div class="projects2-wrapper" id="projects2-wrapper"></div>
+
+        <!-- Bouton de navigation droite (identique à projects) -->
+        <button class="nav-button right" onclick="showNext('projects2')">
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+    .projects {
+        background-color: #131416;
+        color: #ffffff;
+        text-align: center;
+        padding: 0px 20px;
+        position: relative;
+        top: -150px;
+        left: 55px;
+           
+    }
+    .projects p,
+    .projects h1,
+    .projects h2,
+    .projects .project-description {
+        margin-left: -15px;
+    }
+
+    .projects-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        
+        justify-content: center;
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 20px; /* Espacement entre les cartes */
+        padding: 0 20px; /* Pour éviter que les cartes ne touchent les bords */
+    
+    }
+  
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 200px;
+        margin-left: 100px
+    }
+    .highlight {
+        color: #f70909;
+    }
+
+    .projects-container {
+        position: relative;
+        max-width: 1200px; /* ou la largeur que vous souhaitez */
+        margin: 0 auto;
+        padding: 0 20px; /* espace pour les boutons */
+        display: flex;
+        align-items: center;
+        
+    }
+    .project-card {
+        background-color: #1d1f22;
+        
+        border-radius: 10px;
+        padding: 20px; /* Doit être identique */
+        margin: 0; /* Pas de marges externes */
+        flex: 0 0 calc(33.333% - 20px);
+        text-align: center;
+        box-shadow: 0px 0px 10px rgba(255, 140, 0, 0.5);
+    }   
+
+    .icon {
+        font-size: 2rem;
+        color: #d8d8d8;
+        margin-bottom: 10px;
+    }
+    .project-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .project-description {
+        font-size: 1rem;
+        margin: 15px 0;
+    }
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .projects2 {
+        background-color: #131416;
+        color: #ffffff;
+        text-align: center;
+        padding: 0px 20px; /* Changement du padding ici */
+        position: relative;
+        top: -150px;
+    }
+
+    .projects2-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        
+    
+    }
+  
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+  
+    .highlight {
+        color: #ff8c00;
+    }
+  
+    .projects2-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px; /* Espace entre les cartes */
+        position: relative; /* Permet de positionner les boutons à l'intérieur */
+        
+
+
+    }
+
+
+
+
+
+  
+    .projects2-card {
+        background-color: #1d1f22;
+        
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 0px 10px rgba(255, 140, 0, 0.5);
+        
+        padding: 20px; /* Doit être identique */
+        margin: 0; /* Pas de marges externes */
+        flex: 0 0 calc(33.333% - 20px); /* 3 cartes par vue, avec un espace de 20px */
+        
+        box-sizing: border-box;
+        transition: opacity 0.5s ease-in-out; /* Animation d'apparition */
+
+
+    }
+
+    .projects2-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+  
+    .projects2-description {
+        font-size: 1rem;
+        margin: 15px 0;
+    }
+  
+
+  
+    .projects2-button:hover {
+        background-color: #ffffff;
+    }
+  
+
+
+
+
+
+
+
+    .nav-button:hover {
+        color: #ffffff; /* Change la couleur de la flèche au survol */
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // Données des projets - version unifiée
+    const projectsData = {
+        projects: [
+            { icon: "🌧️", title: "Météo France", description: "Challenge dataviz", link: "Projet2-4.html" },
+            { icon: "📝", title: "Questionnaire", description: "Mise en oeuvre d’une enquête de Satisfaction", link: "Projet2.html" },
+            { icon: "📊", title: "Projet EPSM", description: "Outil d'aide à la décision", link: "Projet5.html" },
+            { icon: "📈", title: "SAE203", description: "Projet1", link: "Projet3.html" },
+            { icon: "📚", title: "Rapport Insee", description: "emploi dans la fonction publique", link: "Projet1.html" },
+
+            
+
+        ],
+        projects2: [
+            { icon: "🎶", title: "Application R-Shiny Spotify", description: "Développement d'un composant d'une solution décisionnelle", link: "Projet2-3.html" },
+            { icon: "🔍", title: "Reporting Multivariée", description: "analyse en composantes principales", link: "Projet2-5.html" },
+            { icon: "💼", title: "Stage", description: "Stage au Crédit Agricole", link: "Projet2-2.html" },
+            { icon: "🌐", title: "Scrapping", description: "Collecte automatisée de données web", link: "Projet2-1.html" },
+            { icon: "🏗️", title: "Reporting", description: "Reporting pour Sodebo", link: "Projet2-6" },
+            
+
+        ]
+    };
+    
+// Index actuel pour chaque section
+let currentIndex = {
+    projects: 0,
+    projects2: 0,
+};
+
+// Fonction pour afficher les projets suivants
+function showNext(section) {
+    const container = document.getElementById(`${section}-wrapper`);
+    currentIndex[section] = (currentIndex[section] + 3) % projectsData[section].length;
+    updateProjectsDisplay(section, container);
+}
+
+// Fonction pour afficher les projets précédents
+function showPrevious(section) {
+    const container = document.getElementById(`${section}-wrapper`);
+    currentIndex[section] = (currentIndex[section] - 3 + projectsData[section].length) % projectsData[section].length;
+    updateProjectsDisplay(section, container);
+}
+
+// Fonction pour mettre à jour l'affichage
+function updateProjectsDisplay(section, container) {
+    if (!container) return;
+    
+    container.innerHTML = "";
+    const cardClass = section === 'projects' ? 'project-card' : 'projects2-card';
+
+    for (let i = 0; i < 3; i++) {
+        const projectIndex = (currentIndex[section] + i) % projectsData[section].length;
+        const project = projectsData[section][projectIndex];
+
+        const projectCard = document.createElement("div");
+        projectCard.className = cardClass;
+        projectCard.innerHTML = `
+            <div class="icon">${project.icon}</div>
+            <h3 class="project-title">${project.title}</h3>
+            <p class="project-description">${project.description}</p>
+            <button class="project-button" onclick="window.location.href='${project.link}'">Learn More</button>
+        `;
+        container.appendChild(projectCard);
+    }
+}
+
+// Initialisation
+document.addEventListener("DOMContentLoaded", () => {
+    // Initialisation des projets lors du chargement de la page
+    updateProjectsDisplay("projects", document.getElementById("projects-wrapper"));
+    updateProjectsDisplay("projects2", document.getElementById("projects2-wrapper"));
+});
+
+    
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Bannière en bas de la page -->
+
+<canvas></canvas>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="banner">
+    <div class="banner-content">
+        <p>Page web statique développé par Matéo ESTEBAN étudiant à l'iut de Vannes en BUT2-SD
+
+            </p>
+        <p>© Matéo ESTEBAN 2025</p>
+    </div>
+</footer>
+
+
+
+
+    
+
+
+   
+    <script src="test.js"></script>
+</body>
+</html>
+
+
+
