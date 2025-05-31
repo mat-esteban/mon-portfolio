@@ -1,151 +1,213 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Météo France</title>
-    <link rel="stylesheet" href="style_comp.css">
-    <style>
-        /* Styles pour les étoiles */
-        html {
-            height: 100%;
-            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-            overflow: hidden;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stage au Crédit Agricole</title>
+  <link rel="stylesheet" href="style_comp.css" />
 
-        #stars, #stars2, #stars3 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: transparent;
-            animation: animStar linear infinite;
-        }
+  <style>
+    html {
+      height: 100%;
+      background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+      overflow: hidden;
+    }
 
-        #stars {
-            width: 1px;
-            height: 1px;
-            animation-duration: 50s;
-        }
+    #stars, #stars2, #stars3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: transparent;
+      animation: animStar linear infinite;
+    }
 
-        #stars2 {
-            width: 2px;
-            height: 2px;
-            animation-duration: 100s;
-        }
+    #stars {
+      width: 1px;
+      height: 1px;
+      animation-duration: 50s;
+    }
 
-        #stars3 {
-            width: 3px;
-            height: 3px;
-            animation-duration: 150s;
-        }
+    #stars2 {
+      width: 2px;
+      height: 2px;
+      animation-duration: 100s;
+    }
 
-        @keyframes animStar {
-            from {
-                transform: translateY(0px);
-            }
-            to {
-                transform: translateY(-2000px);
-            }
-        }
+    #stars3 {
+      width: 3px;
+      height: 3px;
+      animation-duration: 150s;
+    }
 
-        /* Styles pour le rectangle avec fond flou */
-        
+    @keyframes animStar {
+      from {
+        transform: translateY(0px);
+      }
+      to {
+        transform: translateY(-2000px);
+      }
+    }
 
+    .content-box {
+      position: relative;
+      background: rgba(255, 255, 255, 0.1);
+      font-family: 'Segoe UI';
+      backdrop-filter: blur(12px);
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 4000px;
+      text-align: left;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
+    .image-row {
+      display: flex;
+      gap: 50px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
 
-.content-box {
-    position: relative; /* Position relative pour le contenu */
-    background: rgba(255, 255, 255, 0.1); /* Fond semi-transparent */
-    font-family: 'Segoe UI';
-    backdrop-filter: blur(12px); /* Effet de flou */
-    border-radius: 15px; /* Coins arrondis */
-    padding: 40px; /* Espace intérieur */
-    max-width: 4000px; /* Largeur maximale */
-    margin: left ;
-    text-align: left; 
-    color: white; /* Couleur du texte */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légère */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
-  }
-  
-    </style>
+    .image-row img {
+      width: 300px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .image-row img:hover {
+      transform: scale(1.05);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px white;
+      animation: zoomIn 0.4s ease;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <div id="stars"></div>
-    <div id="stars2"></div>
-    <div id="stars3"></div>
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
 
-    <div class="content-box">
-        <h1>Stage(toujours en cours🏗️)</h1>
-        
-            
-            
-<h2>Fichier Excel automatisé avec VBA</h2>
-<p>  
-J’ai développé un fichier Excel automatisé en VBA afin de remplacer un outil existant devenu obsolète, car entièrement basé sur une saisie manuelle.
-Le nouveau fichier permet notamment :.</p>  
+  <div class="content-box">
+    <h1>Stage – Crédit Agricole du Finistère : Analyse de données & automatisation</h1>
 
-•	Le remplissage automatique des informations à partir d’un identifiant agent (nom, prénom, agence, etc.)
-<br></br>
-•	Une meilleure lisibilité grâce à des repères visuels par semaine
-<br></br>
-•	La conversion automatique des statuts ("0%" → KO, "100%" → OK)
-<br></br>
-•	Des calculs dynamiques et des tableaux croisés (TCD) actualisés automatiquement selon plusieurs dimensions (agent, agence, global)
-<br></br>
-<p>  
-Mise à jour du suivi des coffres-forts
-En collaboration avec un collègue, j’ai participé à la mise à jour du suivi d’un ancien système de stockage sécurisé en agence.
-Le suivi existant n’ayant pas été actualisé depuis plusieurs années, nous avons repris et fiabilisé les données liées à l’utilisation de ces coffres, en identifiant les écarts et situations particulières (coffres transférés, inaccessibles, etc.).
-Requêtes sous SAP Business Objects
-J’ai conçu plusieurs requêtes via SAP Business Objects (Web Intelligence), portant sur la clientèle physique.</p>  
-Ces requêtes ont permis de :
-•	Identifier les statuts juridiques particuliers (tutelle, curatelle, etc.)
-<br></br>
-•	Repérer les clients en situation de fragilité
-<br></br>
-•	Analyser les profils non-résidents fiscaux
-<br></br>
-J’ai utilisé des filtres avancés et défini des variables personnalisées pour affiner les résultats, en veillant à la cohérence des données extraites.
-Analyse des incohérences dans les données
-J’ai rédigé un document listant les principales anomalies rencontrées dans la base de données clients, telles que :
-•	Dates de naissance génériques ou incohérentes
-<br></br>
-•	Comptes sans activité mais encore considérés comme ouverts
-<br></br>
-•	Prospects redondants ou peu pertinents
-<br></br>
-•	Civilités et libellés non harmonisés (ex. : "Mme", "Madame", "M.", etc.)
-.</p>  
+    <p>
+      Durant un stage de 3 mois au sein de l’unité Partenaire du Crédit Agricole du Finistère, j’ai participé à l’optimisation d’outils internes de suivi de la conformité clients, dans le cadre du dispositif <strong>KYC (Know Your Customer)</strong>, ainsi qu’à la fiabilisation des données sensibles. Mon travail s’est inscrit dans une logique de qualité, de sécurisation des traitements et de soutien aux métiers de la conformité.
+    </p>
 
-    <a href="index.html"><span>Retour à l'accueil</span></a>
+    <h2>Missions réalisées</h2>
 
+    <h3>🔹 Automatisation et fiabilisation sous Excel VBA</h3>
+    <ul>
+      <li>Développement d’un fichier automatisé pour le suivi de la conformité KYC.</li>
+      <li>Génération automatique d’indicateurs et de tableaux croisés dynamiques.</li>
+      <li>Intégration de contrôles de saisie (formats, doublons, erreurs) pour fiabiliser les données.</li>
+    </ul>
 
-        
+    <h3>🔹 Reprise et amélioration d’un outil de suivi physique</h3>
+    <ul>
+      <li>Mise à jour d’un fichier de traçabilité d’équipements sensibles.</li>
+      <li>Vérification terrain et croisement des données pour fiabiliser l’existant.</li>
+      <li>Structuration des informations avec visualisation et contrôles intégrés dans Excel.</li>
+    </ul>
+
+    <h3>🔹 Analyse décisionnelle avec SAP BusinessObjects</h3>
+    <ul>
+      <li>Élaboration de requêtes Web Intelligence pour identifier anomalies et doublons.</li>
+      <li>Création de variables calculées et filtres complexes.</li>
+      <li>Rédaction de rapports clairs et synthétiques à destination des équipes métiers.</li>
+    </ul>
+
+    <h3>🔹 Anonymisation des données & documentation</h3>
+    <ul>
+      <li>Génération de jeux de données fictives avec Python (<code>Faker</code>) pour les tests et supports externes.</li>
+      <li>Rédaction de guides et méthodes d’utilisation des outils Excel/Access pour des profils non techniques.</li>
+      <li>Respect des normes internes de confidentialité et de protection des données.</li>
+    </ul>
+
+    <hr style="border: none; height: 2px; background-color: white; margin: 40px 0;">
+
+    <h2>Compétences développées</h2>
+    <ul>
+      <li>Automatisation de tâches répétitives avec <strong>Excel VBA</strong> et amélioration de processus internes.</li>
+      <li>Analyse décisionnelle avec des outils de <strong>Business Intelligence</strong> comme <strong>SAP BO</strong>.</li>
+      <li>Nettoyage, contrôle et fiabilisation de données dans un contexte sensible (clients, conformité).</li>
+      <li>Utilisation de <strong>Python</strong> pour générer des données fictives et garantir la confidentialité.</li>
+      <li>Rédaction de documentation claire pour des utilisateurs non spécialistes.</li>
+      <li>Adaptabilité à un environnement bancaire rigoureux, structuré et collaboratif.</li>
+    </ul>
+
+    <!-- Ligne d'images (GIF + 2 miniatures) -->
+    <div class="image-row">
+
+      <img id="thumbnail1" src="photo/projets/cr.png" alt="Image 1">
+            <img id="gif1" src="photo/projets/gif/spotify.gif" alt="GIF Animation">
+      <img id="thumbnail2" src="photo/projets/coder.jpg" alt="Image 2">
     </div>
 
-    <script>
-        // Fonction pour générer des ombres aléatoires
-        function generateStarShadows(numStars, maxWidth, maxHeight) {
-            let shadows = [];
-            for (let i = 0; i < numStars; i++) {
-                const x = Math.floor(Math.random() * maxWidth);
-                const y = Math.floor(Math.random() * maxHeight);
-                shadows.push(`${x}px ${y}px #FFF`);
-            }
-            return shadows.join(', ');
-        }
+    <!-- Modales d'images -->
 
-        // Appliquer les ombres aux éléments d'étoiles
-        document.addEventListener('DOMContentLoaded', () => {
-            const stars = document.getElementById('stars');
-            const stars2 = document.getElementById('stars2');
-            const stars3 = document.getElementById('stars3');
+    <div id="modal1" class="modal"><img src="photo/projets/cr.png" alt="Zoom 1"></div>
+        <div id="modalGif" class="modal"><img src="photo/projets/gif/spotify.gif" alt="GIF Zoom"></div>
+    <div id="modal2" class="modal"><img src="photo/projets/coder.jpg" alt="Zoom 2"></div>
 
-            stars.style.boxShadow = generateStarShadows(700, 2000, 2000); // 700 petites étoiles
-            stars2.style.boxShadow = generateStarShadows(200, 2000, 2000); // 200 étoiles moyennes
-            stars3.style.boxShadow = generateStarShadows(100, 2000, 2000); // 100 grosses étoiles
-        });
-    </script>
+    <br><br>
+    <a href="index.html"><span>Retour à l'accueil</span></a>
+  </div>
+
+  <script>
+    function generateStarShadows(numStars, maxWidth, maxHeight) {
+      let shadows = [];
+      for (let i = 0; i < numStars; i++) {
+        const x = Math.floor(Math.random() * maxWidth);
+        const y = Math.floor(Math.random() * maxHeight);
+        shadows.push(`${x}px ${y}px #FFF`);
+      }
+      return shadows.join(', ');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('stars').style.boxShadow = generateStarShadows(700, 2000, 2000);
+      document.getElementById('stars2').style.boxShadow = generateStarShadows(200, 2000, 2000);
+      document.getElementById('stars3').style.boxShadow = generateStarShadows(100, 2000, 2000);
+    });
+
+    // Gestion des miniatures et modales
+    const thumbnails = [
+
+      { thumb: 'thumbnail2', modal: 'modal2' },
+      { thumb: 'thumbnail1', modal: 'modal1' },
+      { thumb: 'gif1', modal: 'modalGif' }
+    ];
+
+    thumbnails.forEach(({ thumb, modal }) => {
+      const thumbEl = document.getElementById(thumb);
+      const modalEl = document.getElementById(modal);
+      thumbEl.onclick = () => modalEl.style.display = 'flex';
+      modalEl.onclick = () => modalEl.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
