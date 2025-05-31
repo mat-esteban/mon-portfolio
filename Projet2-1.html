@@ -76,15 +76,55 @@
     <div id="stars3"></div>
 
     <div class="content-box">
-        <h1>Collecte automatisée de données web</h1>
-        <p>Au cours de ce projet, nous avons entrepris deux tâches essentielles. 
-            Tout d’abord, nous avons sélectionné un site internet boulanger.com répertoriant différents produits allant des produis électroménager 
-            aux produits de cuisine. En utilisant Python, et différentes libabraires adaptés tel que selenium ou beautiful soup nous avons extrait
-             les informations pertinentes de cette page. Le scraping de données est une étape cruciale pour collecter des informations à partir de 
-             sources en ligne, mais il est important de respecter les politiques de sécurité mises en place par les sites web. Ensuite, à partir de 
-             la base de données, nous avons conçu un en ETL en python afin de transformer et transférer les données dans une base de données MySQL. 
-             Ce projet nous a permis d’appliquer nos compétences en scraping de données et en gestion de base de données et création d’etl, tout en 
-             tenant compte des contraintes de sécurité liées au choix du site web à scraper.</p>  
+<h3>Objectif du projet</h3>
+
+<p>
+  L’objectif principal était de collecter des données à jour sur des produits électroménagers à partir du site <strong>Boulanger.com</strong>, de les transformer selon des critères définis, puis de les intégrer dans une base de données relationnelle MySQL, à des fins d’analyse et de modélisation.
+</p>
+
+<h4>Étapes clés du projet</h4>
+
+<ul>
+  <li><strong>🔹 Scraping des données avec Python :</strong>
+    <ul>
+      <li>Utilisation des bibliothèques <code>BeautifulSoup</code> et <code>Selenium</code> pour extraire automatiquement les informations produits (nom, prix, disponibilité, catégorie…).</li>
+      <li>Gestion de la navigation dynamique sur le site grâce à Selenium (click, scroll, chargement différé…).</li>
+      <li>Prise en compte des politiques de sécurité du site (<code>robots.txt</code>, fréquence des requêtes) pour garantir un scraping éthique et respectueux.</li>
+    </ul>
+  </li>
+
+  <li><strong>🔹 Transformation des données (T) :</strong>
+    <ul>
+      <li>Nettoyage des données extraites : normalisation des noms, conversion des prix, élimination des doublons.</li>
+      <li>Structuration dans un format tabulaire pour préparer l’insertion en base.</li>
+      <li>Création de catégories harmonisées pour faciliter l’analyse (type de produit, gamme de prix…).</li>
+    </ul>
+  </li>
+
+  <li><strong>🔹 Chargement dans une base de données MySQL (L) :</strong>
+    <ul>
+      <li>Conception du schéma relationnel.</li>
+      <li>Utilisation de <code>pymysql</code> ou <code>SQLAlchemy</code> pour insérer les données automatiquement.</li>
+      <li>Vérification d’intégrité et gestion des clés primaires/étrangères.</li>
+    </ul>
+  </li>
+</ul>
+<!-- Ligne blanche avant "Compétences développées" -->
+
+<hr style="border: none; height: 2px; background-color: white; margin: 40px 0;">
+<h4>Compétences développées</h4>
+
+<ul>
+  <li><strong>Web scraping avancé avec Python :</strong> navigation dynamique, parsing HTML, extraction multi-niveaux.</li>
+  <li><strong>Conception d’un pipeline ETL :</strong> du scraping au stockage en base de données.</li>
+  <li><strong>Nettoyage et transformation des données :</strong> en vue d’une intégration fiable.</li>
+  <li><strong>Gestion de bases de données relationnelles (MySQL) :</strong> création de tables, insertion, indexation.</li>
+  <li><strong>Sensibilisation aux contraintes légales et techniques du scraping :</strong> respect de l’éthique et des limites imposées par les sites.</li>
+  <li><strong>Travail en équipe sur un projet technique :</strong> coordination des tâches entre extraction, traitement et stockage.</li>
+</ul>
+
+
+
 
     <a href="index.html"><span>Retour à l'accueil</span></a>
 
