@@ -110,24 +110,49 @@
   <div id="stars3"></div>
 
   <div class="content-box">
-    <h1>Reporting multivariée</h1>
-    <p>
-      Cette application interactive permet d'explorer les données de criminalité aux États-Unis en 2019 à travers diverses analyses et visualisations. Reposant sur le principe d’ACP (analyse en composantes principales), elle transforme des variables liées entre elles en nouvelles variables décorrélées.
+<h3>Reporting multivariée – Analyse de la criminalité aux États-Unis</h3>
 
-      Les données proviennent du Ministère de la Justice et du FBI, avec des statistiques pour 100 000 habitants, sur la période 1960-2019.
+<p>
+  Dans le cadre de cette SAE, j’ai conçu une application interactive permettant d’explorer les données de criminalité aux États-Unis pour l’année 2019 à travers une série d’analyses statistiques et de visualisations dynamiques. Le projet repose principalement sur l’Analyse en Composantes Principales (ACP), une méthode de réduction de dimension permettant de transformer un ensemble de variables corrélées en un nouveau jeu de variables décorrélées appelées composantes principales. Cette approche statistique facilite l’identification de structures sous-jacentes et de tendances globales dans les données.
+</p>
 
-      <br><br>
-      L'application comprend :
-      <ul>
-        <li>Extrait des données : aperçu sous forme de tableau interactif</li>
-        <li>Résumé : synthèse des tendances</li>
-        <li>Analyse descriptive : exploration des crimes contre les biens et violents</li>
-        <li>Corrélations : liens entre facteurs socio-économiques et criminalité</li>
-        <li>Cartographie : visualisation géographique par État</li>
-      </ul>
+<p>
+  Les données exploitées proviennent de sources officielles telles que le Ministère de la Justice américain et le FBI, et couvrent la période de 1960 à 2019. Les statistiques sont exprimées pour 100 000 habitants, permettant une comparaison équitable entre États.
+</p>
 
-      Grâce à cette application, les utilisateurs peuvent analyser et interpréter les tendances criminelles aux États-Unis en 2019 avec des outils interactifs.
-    </p>
+<p>
+  L’application, développée sous R avec Shiny, est accessible ici :<br>
+  <a href="https://tonlien-vers-lapplication.com" target="_blank" style="color: #0073e6; text-decoration: none; font-weight: bold;">
+    🔗 Application interactive – Criminalité USA 2019
+  </a>
+</p>
+
+<h4>Fonctionnalités de l’application</h4>
+<ul>
+  <li><strong>Extrait des données :</strong> un tableau interactif permet de visualiser un sous-ensemble du jeu de données brutes.</li>
+  <li><strong>Résumé :</strong> synthèse globale des tendances principales.</li>
+  <li><strong>Analyse descriptive :</strong> exploration des différentes catégories de criminalité (crimes violents et crimes contre les biens).</li>
+  <li><strong>Corrélations :</strong> mise en évidence des relations entre les variables socio-économiques (revenu, pauvreté, chômage, etc.) et les taux de criminalité.</li>
+  <li><strong>Cartographie :</strong> visualisation géographique des résultats par État, facilitant l’analyse spatiale.</li>
+</ul>
+
+<p>
+  Grâce à cet outil, les utilisateurs peuvent manipuler les données et visualiser facilement des tendances criminelles complexes à l’aide de techniques statistiques robustes et accessibles.
+</p>
+
+<!-- Ligne de séparation -->
+<hr style="border: none; height: 2px; background-color: #ccc; margin: 40px 0;">
+
+<h3>Compétences développées</h3>
+
+<ul>
+  <li><strong>Maîtrise de l’ACP :</strong> compréhension théorique et mise en œuvre concrète de cette méthode multivariée de réduction de dimension.</li>
+  <li><strong>Traitement et visualisation de données complexes :</strong> travail sur des jeux de données réels à l’échelle nationale, avec des enjeux sociaux et géographiques.</li>
+  <li><strong>Utilisation de Shiny :</strong> développement d’une interface interactive et dynamique en R, facilitant la vulgarisation des résultats pour un public non spécialiste.</li>
+  <li><strong>Analyse statistique approfondie :</strong> mise en lien entre variables socio-économiques et phénomènes de criminalité à l’échelle des États américains.</li>
+  <li><strong>Travail autonome :</strong> ce projet m’a permis de prendre en charge l’intégralité du cycle d’analyse – de l’importation des données à la création d’un outil finalisé.</li>
+</ul>
+
 
     <!-- Ligne d'images (GIF + 3 miniatures) -->
     <div class="image-row">
@@ -135,6 +160,7 @@
       <img id="thumbnail1" src="photo/projets/r2.jpg" alt="Image 1">
       <img id="thumbnail2" src="photo/projets/r3.jpg" alt="Image 2">
       <img id="thumbnail3" src="photo/projets/r4.jpg" alt="Image 3">
+      <img id="thumbnail4" src="photo/projets/acp.jpg" alt="Image 4">
     </div>
 
     <!-- Modales -->
@@ -142,6 +168,7 @@
     <div id="modal1" class="modal"><img src="photo/projets/r2.jpg" alt="Zoom 1"></div>
     <div id="modal2" class="modal"><img src="photo/projets/r3.jpg" alt="Zoom 2"></div>
     <div id="modal3" class="modal"><img src="photo/projets/r4.jpg" alt="Zoom 3"></div>
+    <div id="modal4" class="modal"><img src="photo/projets/acp.jpg" alt="Zoom 4"></div>
 
     <br><br>
     <a href="index.html"><span>Retour à l'accueil</span></a>
@@ -170,7 +197,8 @@
       { thumb: 'gif1', modal: 'modalGif' },
       { thumb: 'thumbnail1', modal: 'modal1' },
       { thumb: 'thumbnail2', modal: 'modal2' },
-      { thumb: 'thumbnail3', modal: 'modal3' }
+      { thumb: 'thumbnail3', modal: 'modal3' },
+      { thumb: 'thumbnail4', modal: 'modal4' }
     ];
 
     thumbnails.forEach(({ thumb, modal }) => {
