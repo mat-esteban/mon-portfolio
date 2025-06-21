@@ -163,51 +163,53 @@
     <div class="image-row">
 
       <img id="thumbnail1" src="photo/projets/cr.png" alt="Image 1">
-            <img id="gif1" src="photo/projets/gif/spotify.gif" alt="GIF Animation">
-      <img id="thumbnail2" src="photo/projets/coder.jpg" alt="Image 2">
+            <img id="gif1" src="photo/projets/crfin.jpg" alt="Image 2">
+      
     </div>
 
     <!-- Modales d'images -->
 
     <div id="modal1" class="modal"><img src="photo/projets/cr.png" alt="Zoom 1"></div>
-        <div id="modalGif" class="modal"><img src="photo/projets/gif/spotify.gif" alt="GIF Zoom"></div>
-    <div id="modal2" class="modal"><img src="photo/projets/coder.jpg" alt="Zoom 2"></div>
+    <div id="modal2" class="modal"><img src="photo/projets/crfin.jpg" alt="Zoom 2"></div>
+    
 
     <br><br>
     <a href="index.html"><span>Retour à l'accueil</span></a>
   </div>
 
   <script>
-    function generateStarShadows(numStars, maxWidth, maxHeight) {
-      let shadows = [];
-      for (let i = 0; i < numStars; i++) {
-        const x = Math.floor(Math.random() * maxWidth);
-        const y = Math.floor(Math.random() * maxHeight);
-        shadows.push(`${x}px ${y}px #FFF`);
-      }
-      return shadows.join(', ');
+
+  function generateStarShadows(numStars, maxWidth, maxHeight) {
+    let shadows = [];
+    for (let i = 0; i < numStars; i++) {
+      const x = Math.floor(Math.random() * maxWidth);
+      const y = Math.floor(Math.random() * maxHeight);
+      shadows.push(`${x}px ${y}px #FFF`);
     }
+    return shadows.join(', ');
+  }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('stars').style.boxShadow = generateStarShadows(700, 2000, 2000);
-      document.getElementById('stars2').style.boxShadow = generateStarShadows(200, 2000, 2000);
-      document.getElementById('stars3').style.boxShadow = generateStarShadows(100, 2000, 2000);
-    });
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('stars').style.boxShadow = generateStarShadows(700, 2000, 2000);
+    document.getElementById('stars2').style.boxShadow = generateStarShadows(200, 2000, 2000);
+    document.getElementById('stars3').style.boxShadow = generateStarShadows(100, 2000, 2000);
 
-    // Gestion des miniatures et modales
     const thumbnails = [
-
-      { thumb: 'thumbnail2', modal: 'modal2' },
       { thumb: 'thumbnail1', modal: 'modal1' },
-      { thumb: 'gif1', modal: 'modalGif' }
+      { thumb: 'gif1', modal: 'modal2' }
     ];
 
     thumbnails.forEach(({ thumb, modal }) => {
       const thumbEl = document.getElementById(thumb);
       const modalEl = document.getElementById(modal);
-      thumbEl.onclick = () => modalEl.style.display = 'flex';
-      modalEl.onclick = () => modalEl.style.display = 'none';
+
+      if (thumbEl && modalEl) {
+        thumbEl.onclick = () => modalEl.style.display = 'flex';
+        modalEl.onclick = () => modalEl.style.display = 'none';
+      }
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
